@@ -1,0 +1,16 @@
+<section>
+  <form>
+    <label for="title">Movie title</label>
+    <input id="title" type="text" class="search" #movieTitle />
+    <button
+      type="button"
+      class="button"
+      (click)="searchMovie(movieTitle.value)"
+    >
+      Search
+    </button>
+  </form>
+  <div class="movie-grid">
+    <app-movie-element *ngFor="let movie of listaPeliculas" [movie]="movie"></app-movie-element>
+  </div>
+</section>
