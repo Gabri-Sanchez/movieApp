@@ -12,8 +12,9 @@ import { MovieService } from './movie.service';
 export class AppComponent {
   title = 'movieApp';
   movieService: MovieService = inject(MovieService);
-
+  data: any = {}
   public searchMovie(title: string){
-    this.movieService.searchMovie(title);
+    this.data = this.movieService.searchMovie(title);
+    console.log(this.data);
   }
 }
