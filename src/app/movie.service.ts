@@ -6,11 +6,14 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs';
 import { SearchMovieResults } from './movie-details';
 import { MovieDetails } from './movie-details';
+
 @Injectable({
   providedIn: 'root',
 })
+
 export class MovieService {
   key: string = environment.movieApiKey;
+
   constructor(private http: HttpClient) {}
 
   searchMoviesByTitle(title: string): Observable<MovieDetails[]> {
@@ -29,12 +32,11 @@ export class MovieService {
   }
 
   searchMovieById(id: number): Observable<MovieDetails> {
-    return this.http
-      .get<MovieDetails>('/api/search/movie/' + id, {
-        headers: {
-          Authorization: 'Bearer ' + this.key,
-          accept: 'application/json',
-        },
-      });
+    return this.http.get<MovieDetails>('/api/movie/' + id, {
+      headers: {
+        Authorization: 'Bearer ' + this.key,
+        accept: 'application/json',
+      },
+    });
   }
 }

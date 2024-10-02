@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MovieDetails } from '../movie-details';
 import { MovieService } from '../movie.service';
-import { MovieElementComponent } from "../movie-element/movie-element.component";
+import { MovieElementComponent } from '../movie-element/movie-element.component';
 
 @Component({
   selector: 'app-home',
@@ -11,14 +11,16 @@ import { MovieElementComponent } from "../movie-element/movie-element.component"
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })
+
 export class HomeComponent {
   movieService: MovieService = inject(MovieService);
 
   listaPeliculas: MovieDetails[] = [];
+
   public searchMovie(title: string) {
     this.movieService.searchMoviesByTitle(title).subscribe((response) => {
       this.listaPeliculas = response;
-      console.log(response)
+      console.log(response);
     });
   }
 }

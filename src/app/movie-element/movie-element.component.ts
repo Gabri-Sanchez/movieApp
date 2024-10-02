@@ -7,9 +7,10 @@ import { MovieDetails } from '../movie-details';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './movie-element.component.html',
-  styleUrl: './movie-element.component.css'
+  styleUrl: './movie-element.component.css',
 })
+
 export class MovieElementComponent {
-  @Input() movie !: MovieDetails
+  @Input() movie!: MovieDetails;
   constructor() {}
 }

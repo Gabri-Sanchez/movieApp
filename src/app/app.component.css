@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.header {
+  background-color: #5a5a5a;
+  width: 100%;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.logo {
+  max-width: 100px;
+  max-height: 50px;
+}
+
+.powered-by-text {
+  margin: 0 15px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #dadada;
+}
