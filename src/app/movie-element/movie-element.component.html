@@ -1,6 +1,9 @@
-<a [href]="'/details/'+ movie.id">
+<a [href]="'/details/' + movie.id">
   <div class="movie-card">
-      <img [src]="'https://image.tmdb.org/t/p/original' +  movie.poster_path" alt="Movie Poster">
-      <h3>{{movie.title}}</h3>
+    <img
+      [src]="'https://image.tmdb.org/t/p/original' + movie.poster_path"
+      alt="Movie Poster"
+    />
+    <h3>{{ movie.title }}</h3>
   </div>
 </a>

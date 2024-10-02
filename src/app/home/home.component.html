@@ -1,16 +1,32 @@
 <section>
-  <form>
-    <label for="title">Movie title</label>
-    <input id="title" type="text" class="search" #movieTitle />
+  <form class="search-form" (ngSubmit)="searchMovie(movieTitle.value)">
+    <label for="title" class="search-label">Search Movie</label>
+    <input
+      id="title"
+      type="text"
+      class="search-input"
+      #movieTitle
+      placeholder="Enter movie title"
+    />
     <button
       type="button"
-      class="button"
+      class="search-button"
       (click)="searchMovie(movieTitle.value)"
     >
       Search
     </button>
   </form>
-  <div class="movie-grid">
-    <app-movie-element *ngFor="let movie of listaPeliculas" [movie]="movie"></app-movie-element>
+
+  <div class="movie-grid" *ngIf="!isLoading">
+    <app-movie-element
+      *ngFor="let movie of listaPeliculas"
+      [movie]="movie"
+    ></app-movie-element>
   </div>
+
+  <div *ngIf="isLoading" class="loading-container">
+  <div class="loading-spinner"></div>
+</div>
+
+
 </section>

@@ -10,7 +10,6 @@ import { MovieDetails } from './movie-details';
 @Injectable({
   providedIn: 'root',
 })
-
 export class MovieService {
   key: string = environment.movieApiKey;
 
@@ -27,7 +26,7 @@ export class MovieService {
       .pipe(
         map((x) => {
           return x.results;
-        })
+        }),
       );
   }
 

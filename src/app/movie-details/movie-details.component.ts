@@ -12,9 +12,7 @@ import { AsyncPipe, CommonModule } from '@angular/common';
   templateUrl: './movie-details.component.html',
   styleUrl: './movie-details.component.css',
 })
-
 export class MovieDetailsComponent {
-
   movieService: MovieService = inject(MovieService);
   route: ActivatedRoute = inject(ActivatedRoute);
   public movie: MovieDetails | null = null;

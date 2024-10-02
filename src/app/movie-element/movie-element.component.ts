@@ -9,7 +9,6 @@ import { MovieDetails } from '../movie-details';
   templateUrl: './movie-element.component.html',
   styleUrl: './movie-element.component.css',
 })
-
 export class MovieElementComponent {
   @Input() movie!: MovieDetails;
   constructor() {}
